@@ -1,11 +1,11 @@
-import React, { useRef, useEffectct } from "react";
+import React, { useRef, useEffect } from "react";
 
 const ImageEditor = props => {
 
   const canvasRef = useRef<HTMLCanvasElement>(null)
   let ImageCanvas = null
 
-  useEffectct(() => {
+  useEffect(() => {
     // Inv
   }, [])
 
