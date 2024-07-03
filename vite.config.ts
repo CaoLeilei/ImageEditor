@@ -7,6 +7,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {
+        javascriptEnabled: true,
         math: 'aways',
       }
     }
