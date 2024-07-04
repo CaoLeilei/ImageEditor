@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/node": "^20.14.9",
     "antd": "^5.17.2",
     "classnames": "^2.5.1",
+    "fabric": "^6.0.1",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "lodash": "^4.17.21",
