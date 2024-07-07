@@ -1,64 +1,51 @@
-import React, { useRef, useEffect } from "react";
-import { Canvas } from "fabric";
+import React from "react";
+import { Layout } from 'antd'
+import EditorHeader from "./EditorHeader/EditorHeader";
+import EditorSide from "./EditorSide/EditorSide";
+import AsideTools from "./EditorSide/AsideTools";
+import EditorContent from "./EditorContent/EditorContent";
 
-interface ImageEditorProps {
-  width?: number;
-  height?: number;
+import './ImageEditor.less';
+
+interface IImageEditorProps {
+}
+
+interface IImageEditorState {
 }
 
 export default class ImageEditor extends React.Component {
-  canvas: Canvas | null;
-  canvasRef: HTMLCanvasElement | null;
 
-  constructor(props: ImageEditorProps) {
+  state: Readonly<IImageEditorState> = {
+  };
+
+  constructor(props: IImageEditorProps) {
     super(props);
-    this.canvasRef = null
-    this.canvas = null
-  }
-
-  componentDidMount() {
-    // this.canvas.setWidth(window.innerWidth);
-    // this.canvas.setHeight(window.innerHeight);
-    // this.canvas.setBackgroundColor("white", this.canvas.renderAll.bind(this.canvas));
-  }
-
-  /**
-   * @description
-   * @memberof ImageEditor
-   */
-  componentWillUnmount(): void {
-    // this.fab
-    this.canvas?.dispose()
-  }
-
-  private initEditorSize() {
   }
 
   render() {
     return (
-      <div className="ImageEditor">
-        <canvas id="c" />;
-      </div>
+      <>
+      <Layout className="ImageEditor">
+        <Layout.Header className="ImageEditor__Header">
+          <EditorHeader />
+        </Layout.Header>
+        <Layout  className="ImageEditor__Main">
+          <Layout.Sider className="ImageEditor__ToolAside" width={71}>
+            <EditorSide />
+          </Layout.Sider>
+          <Layout.Content className="ImageEditor__Content">
+            <div className="ImageEditor__ContentInner">
+            <EditorContent />
+            </div>
+          </Layout.Content>
+          <Layout.Sider width={300} className="ImageEditor__Pane"></Layout.Sider>
+          <Layout.Sider className="ImageEditor__ToolAside" width={71}>
+            <AsideTools />
+          </Layout.Sider>
+        </Layout>
+        <Layout.Footer className="ImageEditor__Footer"></Layout.Footer>
+      </Layout>
+      </>
     )
   }
 }
-
-// const ImageEditor = props => {
-
-//   const canvasRef = useRef<HTMLCanvasElement>(null)
-//   let ImageCanvas = null
-
-//   useEffect(() => {
-//     // Inv
-//   }, [])
-
-//   console.log('canvasRef:', canvasRef)
-
-//   return (
-//     <div>
-//       <canvas ref={canvasRef} />
-//     </div>
-//   )
-// }
-
-// export default ImageEditor

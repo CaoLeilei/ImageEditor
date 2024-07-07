@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
         // @ 替代为 src
-      '@': resolve(__dirname, 'src')
+      'src': resolve(__dirname, 'src')
     },
   },
   css: {
