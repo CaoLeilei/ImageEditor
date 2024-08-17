@@ -1,0 +1,41 @@
+.ImageEditor {
+  position: relative;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+
+  &__Header {
+    position: relative;
+    height: 61px;
+    background: #2e2e2e;
+    border-bottom: 1px solid #000000;
+  }
+  &__Container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 61px);
+    // background: #1c1c1c;
+  }
+
+  &__LeftSider {
+    position: relative;
+    &.ant-layout-sider {
+      background: #2e2e2e;
+      box-sizing: border-box;
+      border-right: 1px solid #000000;
+    }
+  }
+  &__RightSider {
+    position: relative;
+    &.ant-layout-sider {
+      background: #2e2e2e;
+      box-sizing: border-box;
+      border-left: 1px solid #000000;
+    }
+  }
+
+  &__Content {
+    position: relative;
+    background: #1c1c1c;
+  }
+}

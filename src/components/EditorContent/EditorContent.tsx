@@ -6,7 +6,7 @@ import './EditorContent.less'
 
 interface IEditorContentProps {
   showRuler: boolean, // 是否展示标尺
-  showLine: boolean, // 是否展示线
+  showGridLine: boolean, // 是否展示线
 }
 
 export default class EditorContent extends React.Component {
@@ -19,17 +19,18 @@ export default class EditorContent extends React.Component {
   }
 
   render() {
-    const { showRuler, showLine } = this.props
+    const { showRuler, showGridLine } = this.props as IEditorContentProps
+
     return (
       <div className="EditorContent">
         { showRuler && <div className="EditorContent__TopRuler" /> }
-        <div className="EditorContent__LeftRuler"></div>
+        { showRuler && <div className="EditorContent__LeftRuler"></div>}
         <Scrollbars>
           <div className="EditorContent__Inner">
             <ImageView ref={this.imageViewRef} />
           </div>
         </Scrollbars>
-        <div className="EditorContent__Line"></div>
+        {showGridLine && <div className="EditorContent__Line"></div>}
       </div>
     )
   }

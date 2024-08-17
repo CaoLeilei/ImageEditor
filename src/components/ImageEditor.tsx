@@ -22,6 +22,14 @@ export default class ImageEditor extends React.Component {
     super(props);
   }
 
+  handleOpenImage = () => {
+    const fileInput = document.createElement('input')
+    fileInput.type = 'file'
+    fileInput.accept = 'image/*'
+    console.dir('fileInput', fileInput)
+    fileInput.click()
+  }
+
   render() {
     return (
       <>
@@ -31,7 +39,7 @@ export default class ImageEditor extends React.Component {
         </Layout.Header>
         <Layout  className="ImageEditor__Main">
           <Layout.Sider className="ImageEditor__ToolAside" width={71}>
-            <EditorSide />
+            <EditorSide onOpenImage={this.handleOpenImage} />
           </Layout.Sider>
           <Layout.Content className="ImageEditor__Content">
             <div className="ImageEditor__ContentInner">

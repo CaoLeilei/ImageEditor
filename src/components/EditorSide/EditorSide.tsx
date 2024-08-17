@@ -4,14 +4,13 @@ import { FolderOpenOutlined } from "@ant-design/icons";
 import "./EditorSide.less"
 
 interface IEditorSideProps {
-  onOpenFile?: () => void
+  onOpenImage?: () => void
 }
 
 const EditorSide: React.FC = (props: IEditorSideProps) => {
-
   const handleOpenFileMenuClick = () => {
-    const { onOpenFile = noop } = props
-    onOpenFile()
+    const { onOpenImage = noop } = props
+    onOpenImage()
   }
 
   return (

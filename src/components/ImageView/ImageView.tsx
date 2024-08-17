@@ -56,28 +56,17 @@ export default class ImageView extends React.Component {
       selectionDashArray: [5, 5],
     });
 
+    console.log('this.canvas', this.canvas)
+
     this.canvas.renderAndReset()
-    // this.canvas.renderAll()
-    // this.canvas.renderTop()
-
-    // const rect = new Rect()
-    // rect.setX(0)
-    // rect.setY(0)
-    // rect.width = 200
-    // rect.height = 200
-
-    // this.canvas.add(rect)
-
-    // // this.canvas.backgroundColor = '#ffffff';
-    // this.canvas.backgroundImage = new FabricImage('http://gips3.baidu.com/it/u=3886271102,3123389489&fm=3028&app=3028&f=JPEG&fmt=auto?w=1280&h=960', (img) => {
-    //   console.log(img)
-    // });
   }
 
   disposeFabricCanvas = () => {
     this.canvas?.dispose();
     this.canvas = null;
   }
+
+  addImage = () => {}
 
   /**
    * 添加全部的事件监听
